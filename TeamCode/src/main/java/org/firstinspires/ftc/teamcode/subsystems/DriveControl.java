@@ -1,20 +1,15 @@
-package org.firstinspires.ftc.teamcode;
+package org.firstinspires.ftc.teamcode.subsystems;
 
-import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.ElapsedTime;
-import com.qualcomm.robotcore.util.Range;
 
 import java.util.ArrayList;
 
 @TeleOp
-@Disabled
-/*
-This class serves as the OpMode class for the subsystem organization.
- */
-public class DriveTrainMecanum extends OpMode {
+//@Disabled
+public class DriveControl extends OpMode {
     private ElapsedTime runtime = new ElapsedTime();
     private DcMotor leftDrive = null;
     private DcMotor rightDrive = null;
@@ -23,14 +18,13 @@ public class DriveTrainMecanum extends OpMode {
     @Override
     public void init() {
         telemetry.addData("Status", "Initialized");
+        telemetry.update();
 
         leftDrive  = hardwareMap.get(DcMotor.class, "left_drive");
         rightDrive = hardwareMap.get(DcMotor.class, "right_drive");
 
         leftDrive.setDirection(DcMotor.Direction.FORWARD);
         rightDrive.setDirection(DcMotor.Direction.REVERSE);
-
-        telemetry.addData("Status", "Initialized");
     }
 
     // runs REPEATEDLY after the driver hits INIT, but before they hit PLAY
