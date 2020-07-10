@@ -10,6 +10,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 public class Drive extends OpMode {
     private ElapsedTime runtime = new ElapsedTime();
     private MecanumDrive driveTrain;
+    private Lift lift;
 
     @Override
     public void init() {
