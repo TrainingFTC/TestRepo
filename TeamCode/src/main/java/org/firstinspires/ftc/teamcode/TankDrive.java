@@ -12,8 +12,8 @@ import com.qualcomm.robotcore.util.Range;
 @Disabled
 public class TankDrive extends LinearOpMode {
     private ElapsedTime runtime = new ElapsedTime();
-    private DcMotorEx leftDrive = null;
-    private DcMotorEx rightDrive = null;
+    private DcMotorEx spicyDrive = null;
+    private DcMotorEx zestyDrive = null;
 
     @Override
     public void runOpMode() {
@@ -23,29 +23,29 @@ public class TankDrive extends LinearOpMode {
         // Initialize the hardware variables. Note that the strings used here as parameters
         // to 'get' must correspond to the names assigned during the robot configuration
         // step (using the FTC Robot Controller app on the phone).
-        leftDrive  = hardwareMap.get(DcMotorEx.class, "left_drive");
-        rightDrive = hardwareMap.get(DcMotorEx.class, "right_drive");
+        spicyDrive  = hardwareMap.get(DcMotorEx.class, "spicy_drive");
+        zestyDrive = hardwareMap.get(DcMotorEx.class, "zesty_drive");
 
-        leftDrive.setDirection(DcMotor.Direction.FORWARD);
-        rightDrive.setDirection(DcMotor.Direction.REVERSE);
+        spicyDrive.setDirection(DcMotor.Direction.FORWARD);
+        zestyDrive.setDirection(DcMotor.Direction.REVERSE);
 
         waitForStart();
         runtime.reset();
 
         while (opModeIsActive()) {
-            double leftPower;
-            double rightPower;
+            double spicyPower;
+            double zestyPower;
 
             double drive = -gamepad1.left_stick_y;
             double turn  =  gamepad1.right_stick_x;
-            leftPower    = Range.clip(drive + turn, -1.0, 1.0) ;
-            rightPower   = Range.clip(drive - turn, -1.0, 1.0) ;
+            spicyPower    = Range.clip(drive + turn, -1.0, 1.0) ;
+            zestyPower   = Range.clip(drive - turn, -1.0, 1.0) ;
 
-            leftDrive.setPower(leftPower);
-            rightDrive.setPower(rightPower);
+            spicyDrive.setPower(spicyPower);
+            zestyDrive.setPower(zestyPower);
 
             telemetry.addData("Status", "Run Time: " + runtime.toString());
-            telemetry.addData("Motors", "left (%.2f), right (%.2f)", leftPower, rightPower);
+            telemetry.addData("Motors", "Spicy (%.2f), Zesty (%.2f)", spicyPower, zestyPower);
             telemetry.update();
         }
     }
