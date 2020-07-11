@@ -5,7 +5,7 @@ import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
-@TeleOp (name = "Adam's git commit -am \"Hopefully halved the speed.\"\nSlower Tank Drive")
+@TeleOp (name = "Adam's Slower Tank Drive")
 //@Disabled
 public class Drive extends OpMode {
     private ElapsedTime runtime = new ElapsedTime();
