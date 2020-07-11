@@ -64,10 +64,10 @@ public class MecanumDrive {
     }
 
     public void stop() {
-        lFront.setPower(0);
-        rBack.setPower(0);
-        lBack.setPower(0);
-        rFront.setPower(0);
+        lFront.setPower(.25);
+        rBack.setPower(.25);
+        lBack.setPower(.25);
+        rFront.setPower(0.25);
     }
 
     public void stopTargeting() {
