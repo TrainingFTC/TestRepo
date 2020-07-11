@@ -95,10 +95,10 @@ public class MecanumDrive {
         double backL = Range.clip(drive + strafe - inv * turn,-1,1);
         double backR = Range.clip(-drive + strafe - inv * turn,-1,1);
 
-        rFront.setPower(inv * frontR);
-        lBack.setPower(inv * backL);
-        rBack.setPower(inv * backR);
-        lFront.setPower(inv * frontL);
+        rFront.setPower(inv * frontR * .5);
+        lBack.setPower(inv * backL * .5);
+        rBack.setPower(inv * backR * .5);
+        lFront.setPower(inv * frontL * .5);
     }
 
     public double getLFrontPower() {return lFront.getPower();}
