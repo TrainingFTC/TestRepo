@@ -40,9 +40,9 @@ public class Drive extends OpMode {
         telemetry.addData("Status", "Run Time: " + runtime.toString());
         telemetry.addData("Status", "opMode Time: " + time);
 
-        telemetry.addData("Power", "L (%.2f), R (%.2f)",
+        telemetry.addData("Power", "L (%.1f), R (%.1f)",
                 driveTrain.getLFrontPower(), driveTrain.getRFrontPower());
-        telemetry.addData("Velocity", "L (%.2f), R (%.2f)",
+        telemetry.addData("Velocity", "L (%.1f), R (%.1f)",
                 driveTrain.getLFrontVelocity(), driveTrain.getRFrontVelocity());
     }
 
