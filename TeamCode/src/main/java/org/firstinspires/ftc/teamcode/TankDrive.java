@@ -41,8 +41,8 @@ public class TankDrive extends LinearOpMode {
             leftPower    = Range.clip(drive + turn, -1.0, 1.0) ;
             rightPower   = Range.clip(drive - turn, -1.0, 1.0) ;
 
-            leftDrive.setPower(leftPower);
-            rightDrive.setPower(rightPower);
+            leftDrive.setPower(leftPower*leftPower*leftPower);
+            rightDrive.setPower(rightPower*rightPower*rightPower);
 
             telemetry.addData("Status", "Run Time: " + runtime.toString());
             telemetry.addData("Motors", "left (%.2f), right (%.2f)", leftPower, rightPower);
