@@ -15,7 +15,7 @@ public class MecanumDrive {
 
     private HardwareMap hwMap;
 
-    private double dMultiplier = 1;
+    private double dMultiplier = 0.5;
     private double sMultiplier = 1;
     private double tMultiplier = 0.5;
     private int inv;
