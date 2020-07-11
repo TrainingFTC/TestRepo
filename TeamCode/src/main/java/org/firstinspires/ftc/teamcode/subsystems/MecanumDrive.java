@@ -64,10 +64,10 @@ public class MecanumDrive {
     }
 
     public void stop() {
-        lFront.setPower(.25);
-        rBack.setPower(.25);
-        lBack.setPower(.25);
-        rFront.setPower(0.25);
+        lFront.setPower(0);
+        rBack.setPower(0);
+        lBack.setPower(0);
+        rFront.setPower(0);
     }
 
     public void stopTargeting() {
@@ -90,10 +90,10 @@ public class MecanumDrive {
         strafe = strafe * sMultiplier;
         turn = turn * tMultiplier;
 
-        double frontL = Range.clip(drive - strafe - inv * turn,-1,1);
-        double frontR = Range.clip(-drive - strafe - inv * turn,-1,1);
-        double backL = Range.clip(drive + strafe - inv * turn,-1,1);
-        double backR = Range.clip(-drive + strafe - inv * turn,-1,1);
+        double frontL = Range.clip(drive.25 - strafe - inv * turn,-1,1);
+        double frontR = Range.clip(-drive.25 - strafe - inv * turn,-1,1);
+        double backL = Range.clip(drive.25 + strafe - inv * turn,-1,1);
+        double backR = Range.clip(-drive.25 + strafe - inv * turn,-1,1);
 
         rFront.setPower(inv * frontR);
         lBack.setPower(inv * backL);
